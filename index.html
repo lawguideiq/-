@@ -27,7 +27,6 @@ right:-200px;
 animation:float 6s infinite alternate ease-in-out;
 z-index:-1;
 }
-
 @keyframes float{
 from{transform:translateY(0)}
 to{transform:translateY(40px)}
@@ -49,11 +48,10 @@ background:rgba(255,255,255,0.07);
 backdrop-filter:blur(25px);
 padding:50px;
 border-radius:30px;
-max-width:700px;
+max-width:750px;
 box-shadow:0 20px 60px rgba(0,0,0,0.4);
 animation:fadeUp 1s ease;
 }
-
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(30px)}
 to{opacity:1;transform:translateY(0)}
@@ -75,7 +73,7 @@ line-height:1.8;
 margin-bottom:30px;
 }
 
-/* ===== DOWNLOAD BUTTON ===== */
+/* زر التحميل */
 .download-btn{
 display:inline-block;
 padding:18px 45px;
@@ -101,20 +99,57 @@ top:0;
 left:-120%;
 transition:0.6s;
 }
+.download-btn:hover::before{left:120%}
+.download-btn:hover{transform:translateY(-5px)}
 
-.download-btn:hover::before{
-left:120%;
-}
-
-.download-btn:hover{
-transform:translateY(-5px);
-}
-
-/* ===== COUNTER ===== */
 .counter{
 margin-top:20px;
 font-size:16px;
 opacity:0.8;
+}
+
+/* ===== FEATURES ===== */
+.features{
+padding:100px 20px;
+text-align:center;
+}
+
+.features h2{
+font-size:36px;
+margin-bottom:60px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+max-width:1100px;
+margin:auto;
+}
+
+.feature-card{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(20px);
+padding:35px;
+border-radius:25px;
+transition:0.4s;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.09);
+}
+
+.feature-card h3{
+margin-bottom:15px;
+color:#64C3F3;
+font-size:20px;
+}
+
+.feature-card p{
+opacity:0.8;
+line-height:1.7;
 }
 
 /* ===== SOCIAL ===== */
@@ -147,7 +182,7 @@ transform:translateY(-5px);
 
 footer{
 text-align:center;
-padding:20px;
+padding:30px;
 opacity:0.5;
 font-size:14px;
 }
@@ -156,13 +191,14 @@ font-size:14px;
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
 <div class="glass">
 <h1>الدليل القانوني</h1>
 <p>
-منصة قانونية عراقية حديثة تجمع البحث الذكي في القوانين،
-المساعد القانوني، ودليل المحامين الموثق
-في تجربة رقمية احترافية.
+منصة قانونية عراقية متكاملة
+تجمع بين البحث الذكي في القوانين،
+المساعد القانوني، ودليل المحامين الموثق.
 </p>
 
 <a href="YOUR-APK-LINK-HERE.apk" class="download-btn">
@@ -174,9 +210,48 @@ font-size:14px;
 </div>
 
 <div class="social">
-<a href="https://instagram.com/YOURPAGE" target="_blank">📷</a>
+<a href="https://instagram.com/YOURPAGE" target="_blank">انستغرام</a>
 <a href="https://facebook.com/YOURPAGE" target="_blank">📘</a>
 <a href="https://t.me/YOURPAGE" target="_blank">✈️</a>
+</div>
+
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+<h2>مميزات التطبيق</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<h3>بحث ذكي في القوانين</h3>
+<p>إمكانية البحث السريع داخل النصوص القانونية العراقية بدقة وسرعة عالية.</p>
+</div>
+
+<div class="feature-card">
+<h3>مساعد قانوني ذكي</h3>
+<p>تبسيط وشرح المواد القانونية باستخدام تقنيات الذكاء الاصطناعي.</p>
+</div>
+
+<div class="feature-card">
+<h3>دليل محامين موثق</h3>
+<p>عرض المحامين حسب الصلاحية مع إمكانية التواصل المباشر.</p>
+</div>
+
+<div class="feature-card">
+<h3>واجهة احترافية حديثة</h3>
+<p>تصميم زجاجي عصري سريع ومتجاوب مع جميع الأجهزة.</p>
+</div>
+
+<div class="feature-card">
+<h3>تحديثات مستمرة</h3>
+<p>إضافة مواد قانونية ومزايا جديدة بشكل دوري.</p>
+</div>
+
+<div class="feature-card">
+<h3>آمن وسريع</h3>
+<p>أداء مستقر مع حماية عالية للبيانات.</p>
 </div>
 
 </div>
@@ -189,7 +264,6 @@ font-size:14px;
 <script>
 let count = 1241;
 let counter = document.getElementById("downloadCount");
-
 document.querySelector(".download-btn").addEventListener("click", function(){
 count++;
 counter.innerText = count;
