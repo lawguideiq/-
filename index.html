@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدليل القانوني</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Tajawal',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+overflow-x:hidden;
+}
+
+/* ===== HERO ===== */
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+background:radial-gradient(circle at top right,#227ABB55,transparent);
+}
+
+.hero h1{
+font-size:48px;
+font-weight:800;
+margin-bottom:20px;
+background:linear-gradient(90deg,#64C3F3,#227ABB);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+font-size:18px;
+max-width:600px;
+opacity:0.85;
+margin-bottom:40px;
+line-height:1.8;
+}
+
+/* ===== DOWNLOAD BUTTON ===== */
+.download-btn{
+padding:18px 40px;
+border-radius:50px;
+background:linear-gradient(135deg,#227ABB,#64C3F3);
+color:white;
+font-size:18px;
+font-weight:700;
+text-decoration:none;
+box-shadow:0 10px 30px rgba(34,122,187,0.5);
+transition:0.3s;
+display:inline-block;
+}
+
+.download-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 40px rgba(34,122,187,0.7);
+}
+
+/* ===== FEATURES ===== */
+.features{
+padding:80px 20px;
+text-align:center;
+}
+
+.features h2{
+font-size:32px;
+margin-bottom:50px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.feature{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+padding:30px;
+border-radius:25px;
+transition:0.3s;
+}
+
+.feature:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.08);
+}
+
+.feature h3{
+margin-bottom:15px;
+color:#64C3F3;
+}
+
+/* ===== SCREENSHOTS ===== */
+.screens{
+padding:80px 20px;
+text-align:center;
+}
+
+.screens h2{
+font-size:32px;
+margin-bottom:40px;
+}
+
+.screen-gallery{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding-bottom:10px;
+}
+
+.screen-gallery img{
+width:250px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== SECURITY ===== */
+.security{
+padding:80px 20px;
+text-align:center;
+background:#111827;
+}
+
+.security h2{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.security p{
+max-width:700px;
+margin:auto;
+opacity:0.85;
+line-height:1.8;
+}
+
+/* ===== FOOTER ===== */
+footer{
+padding:30px;
+text-align:center;
+background:#0f172a;
+opacity:0.6;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<h1>الدليل القانوني</h1>
+<p>
+منصة قانونية عراقية متكاملة  
+تجمع بين البحث الذكي في القوانين،  
+المساعد القانوني، ودليل المحامين الموثق  
+في تجربة رقمية احترافية.
+</p>
+
+<a href="dalil-legal.apk" class="download-btn" download>
+⬇ تحميل التطبيق الآن
+</a>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+<h2>مميزات التطبيق</h2>
+<div class="feature-grid">
+<div class="feature">
+<h3>بحث ذكي</h3>
+<p>ابحث داخل القوانين العراقية بسرعة ودقة عالية.</p>
+</div>
+<div class="feature">
+<h3>مساعد قانوني</h3>
+<p>مدعوم بالذكاء الاصطناعي لفهم وتبسيط النصوص القانونية.</p>
+</div>
+<div class="feature">
+<h3>دليل محامين</h3>
+<p>محامين موثقين مع إمكانية التواصل المباشر.</p>
+</div>
+<div class="feature">
+<h3>واجهة احترافية</h3>
+<p>تصميم عصري سريع ومتجاوب مع جميع الأجهزة.</p>
+</div>
+</div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screens">
+<h2>صور من داخل التطبيق</h2>
+<div class="screen-gallery">
+<img src="screen1.jpg">
+<img src="screen2.jpg">
+<img src="screen3.jpg">
+</div>
+</section>
+
+<!-- SECURITY -->
+<section class="security">
+<h2>تحميل آمن</h2>
+<p>
+نحن نحرص على توفير نسخة آمنة ومحدثة من التطبيق.  
+قبل التثبيت تأكد من تفعيل خيار السماح بتثبيت التطبيقات من مصادر خارجية في جهازك.
+</p>
+</section>
+
+<footer>
+© 2026 الدليل القانوني - جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
