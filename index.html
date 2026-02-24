@@ -32,7 +32,6 @@ from{transform:translateY(0)}
 to{transform:translateY(40px)}
 }
 
-/* ===== HERO ===== */
 .hero{
 min-height:100vh;
 display:flex;
@@ -73,6 +72,19 @@ line-height:1.8;
 margin-bottom:30px;
 }
 
+/* كارد الأمان */
+.security-card{
+background:rgba(34,122,187,0.15);
+border:1px solid rgba(100,195,243,0.4);
+padding:20px;
+border-radius:20px;
+margin-bottom:25px;
+backdrop-filter:blur(15px);
+font-size:15px;
+line-height:1.7;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
 /* زر التحميل */
 .download-btn{
 display:inline-block;
@@ -108,7 +120,37 @@ font-size:16px;
 opacity:0.8;
 }
 
-/* ===== FEATURES ===== */
+/* سوشال */
+.social{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.social a{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.social a:hover{
+background:#227ABB;
+transform:translateY(-6px);
+}
+
+.social svg{
+width:22px;
+height:22px;
+fill:white;
+}
+
 .features{
 padding:100px 20px;
 text-align:center;
@@ -144,40 +186,6 @@ background:rgba(255,255,255,0.09);
 .feature-card h3{
 margin-bottom:15px;
 color:#64C3F3;
-font-size:20px;
-}
-
-.feature-card p{
-opacity:0.8;
-line-height:1.7;
-}
-
-/* ===== SOCIAL ===== */
-.social{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:15px;
-}
-
-.social a{
-width:45px;
-height:45px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-text-decoration:none;
-font-size:20px;
-color:white;
-transition:0.3s;
-}
-
-.social a:hover{
-background:#227ABB;
-transform:translateY(-5px);
 }
 
 footer{
@@ -191,69 +199,62 @@ font-size:14px;
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 <div class="glass">
+
 <h1>الدليل القانوني</h1>
+
 <p>
 منصة قانونية عراقية متكاملة
-تجمع بين البحث الذكي في القوانين،
-المساعد القانوني، ودليل المحامين الموثق.
+تجمع بين البحث الذكي، المساعد القانوني،
+ودليل المحامين الموثق.
 </p>
+
+<!-- كارد الأمان -->
+<div class="security-card">
+🔒 التطبيق آمن وخالٍ من البرمجيات الضارة.  
+يتم توفير النسخة الرسمية فقط عبر هذه الصفحة.  
+في حال ظهور تحذير من النظام، يرجى اختيار "تثبيت على أي حال".
+</div>
 
 <a href="YOUR-APK-LINK-HERE.apk" class="download-btn">
 ⬇ تحميل التطبيق الآن
 </a>
 
 <div class="counter">
-تم تحميل التطبيق <span id="downloadCount">1241</span> مرة
+تم تحميل التطبيق <span id="downloadCount">1000+</span> مرة
 </div>
 
 <div class="social">
-<a href="https://instagram.com/YOURPAGE" target="_blank">انستغرام</a>
-<a href="https://facebook.com/YOURPAGE" target="_blank">📘</a>
-<a href="https://t.me/YOURPAGE" target="_blank">✈️</a>
+<a href="https://instagram.com/legalg.iq" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M7.8 2h8.4C19.9 2 22 4.1 22 6.8v8.4c0 2.7-2.1 4.8-4.8 4.8H7.8C5.1 20 3 17.9 3 15.2V6.8C3 4.1 5.1 2 7.8 2zm4.2 5.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm5.1-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/>
+</svg>
+</a>
+
+<a href="https://facebook.com/legalguideiq" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M13 22v-9h3l1-4h-4V6.5c0-1.2.3-2 2-2h2V1.3C16.7 1.2 15.6 1 14.4 1 11.7 1 10 2.7 10 5.8V9H7v4h3v9h3z"/>
+</svg>
+</a>
+
+<a href="https://t.me/legalg_iq" target="_blank">
+<svg viewBox="0 0 24 24">
+<path d="M9.9 16.2l-.4 3.8c.6 0 .9-.3 1.2-.6l2.9-2.8 6 4.4c1.1.6 1.9.3 2.2-1l4-18.7c.4-1.7-.6-2.4-1.7-2l-23 8.9c-1.6.6-1.6 1.5-.3 1.9l5.9 1.8L20.5 5c.6-.4 1.2-.2.8.3"/>
+</svg>
+</a>
 </div>
 
 </div>
 </section>
 
-<!-- FEATURES -->
 <section class="features">
 <h2>مميزات التطبيق</h2>
-
 <div class="feature-grid">
-
-<div class="feature-card">
-<h3>بحث ذكي في القوانين</h3>
-<p>إمكانية البحث السريع داخل النصوص القانونية العراقية بدقة وسرعة عالية.</p>
-</div>
-
-<div class="feature-card">
-<h3>مساعد قانوني ذكي</h3>
-<p>تبسيط وشرح المواد القانونية باستخدام تقنيات الذكاء الاصطناعي.</p>
-</div>
-
-<div class="feature-card">
-<h3>دليل محامين موثق</h3>
-<p>عرض المحامين حسب الصلاحية مع إمكانية التواصل المباشر.</p>
-</div>
-
-<div class="feature-card">
-<h3>واجهة احترافية حديثة</h3>
-<p>تصميم زجاجي عصري سريع ومتجاوب مع جميع الأجهزة.</p>
-</div>
-
-<div class="feature-card">
-<h3>تحديثات مستمرة</h3>
-<p>إضافة مواد قانونية ومزايا جديدة بشكل دوري.</p>
-</div>
-
-<div class="feature-card">
-<h3>آمن وسريع</h3>
-<p>أداء مستقر مع حماية عالية للبيانات.</p>
-</div>
-
+<div class="feature-card"><h3>بحث ذكي في القوانين</h3></div>
+<div class="feature-card"><h3>مساعد قانوني ذكي</h3></div>
+<div class="feature-card"><h3>دليل محامين موثق</h3></div>
+<div class="feature-card"><h3>واجهة احترافية حديثة</h3></div>
 </div>
 </section>
 
