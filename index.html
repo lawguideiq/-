@@ -15,6 +15,24 @@ color:white;
 overflow-x:hidden;
 }
 
+/* خلفية متحركة */
+body::before{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#227ABB55,transparent);
+top:-200px;
+right:-200px;
+animation:float 6s infinite alternate ease-in-out;
+z-index:-1;
+}
+
+@keyframes float{
+from{transform:translateY(0)}
+to{transform:translateY(40px)}
+}
+
 /* ===== HERO ===== */
 .hero{
 min-height:100vh;
@@ -24,7 +42,21 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:30px;
-background:radial-gradient(circle at top right,#227ABB55,transparent);
+}
+
+.glass{
+background:rgba(255,255,255,0.07);
+backdrop-filter:blur(25px);
+padding:50px;
+border-radius:30px;
+max-width:700px;
+box-shadow:0 20px 60px rgba(0,0,0,0.4);
+animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
 }
 
 .hero h1{
@@ -38,117 +70,85 @@ color:transparent;
 
 .hero p{
 font-size:18px;
-max-width:600px;
 opacity:0.85;
-margin-bottom:40px;
 line-height:1.8;
+margin-bottom:30px;
 }
 
 /* ===== DOWNLOAD BUTTON ===== */
 .download-btn{
-padding:18px 40px;
-border-radius:50px;
-background:linear-gradient(135deg,#227ABB,#64C3F3);
-color:white;
-font-size:18px;
-font-weight:700;
-text-decoration:none;
-box-shadow:0 10px 30px rgba(34,122,187,0.5);
-transition:0.3s;
 display:inline-block;
+padding:18px 45px;
+border-radius:60px;
+background:linear-gradient(135deg,#227ABB,#64C3F3);
+font-weight:700;
+font-size:18px;
+text-decoration:none;
+color:white;
+position:relative;
+overflow:hidden;
+transition:0.3s;
+box-shadow:0 15px 40px rgba(34,122,187,0.5);
+}
+
+.download-btn::before{
+content:"";
+position:absolute;
+width:120%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+top:0;
+left:-120%;
+transition:0.6s;
+}
+
+.download-btn:hover::before{
+left:120%;
 }
 
 .download-btn:hover{
 transform:translateY(-5px);
-box-shadow:0 15px 40px rgba(34,122,187,0.7);
 }
 
-/* ===== FEATURES ===== */
-.features{
-padding:80px 20px;
-text-align:center;
+/* ===== COUNTER ===== */
+.counter{
+margin-top:20px;
+font-size:16px;
+opacity:0.8;
 }
 
-.features h2{
-font-size:32px;
-margin-bottom:50px;
+/* ===== SOCIAL ===== */
+.social{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
 }
 
-.feature-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1100px;
-margin:auto;
-}
-
-.feature{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(20px);
-padding:30px;
-border-radius:25px;
+.social a{
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+text-decoration:none;
+font-size:20px;
+color:white;
 transition:0.3s;
 }
 
-.feature:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,0.08);
+.social a:hover{
+background:#227ABB;
+transform:translateY(-5px);
 }
 
-.feature h3{
-margin-bottom:15px;
-color:#64C3F3;
-}
-
-/* ===== SCREENSHOTS ===== */
-.screens{
-padding:80px 20px;
-text-align:center;
-}
-
-.screens h2{
-font-size:32px;
-margin-bottom:40px;
-}
-
-.screen-gallery{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding-bottom:10px;
-}
-
-.screen-gallery img{
-width:250px;
-border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* ===== SECURITY ===== */
-.security{
-padding:80px 20px;
-text-align:center;
-background:#111827;
-}
-
-.security h2{
-font-size:28px;
-margin-bottom:20px;
-}
-
-.security p{
-max-width:700px;
-margin:auto;
-opacity:0.85;
-line-height:1.8;
-}
-
-/* ===== FOOTER ===== */
 footer{
-padding:30px;
 text-align:center;
-background:#0f172a;
-opacity:0.6;
+padding:20px;
+opacity:0.5;
 font-size:14px;
 }
 </style>
@@ -156,67 +156,45 @@ font-size:14px;
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
+<div class="glass">
 <h1>الدليل القانوني</h1>
 <p>
-منصة قانونية عراقية متكاملة  
-تجمع بين البحث الذكي في القوانين،  
-المساعد القانوني، ودليل المحامين الموثق  
+منصة قانونية عراقية حديثة تجمع البحث الذكي في القوانين،
+المساعد القانوني، ودليل المحامين الموثق
 في تجربة رقمية احترافية.
 </p>
 
-<a href="dalil-legal.apk" class="download-btn" download>
+<a href="YOUR-APK-LINK-HERE.apk" class="download-btn">
 ⬇ تحميل التطبيق الآن
 </a>
 
-</section>
+<div class="counter">
+تم تحميل التطبيق <span id="downloadCount">1241</span> مرة
+</div>
 
-<!-- FEATURES -->
-<section class="features">
-<h2>مميزات التطبيق</h2>
-<div class="feature-grid">
-<div class="feature">
-<h3>بحث ذكي</h3>
-<p>ابحث داخل القوانين العراقية بسرعة ودقة عالية.</p>
+<div class="social">
+<a href="https://instagram.com/YOURPAGE" target="_blank">📷</a>
+<a href="https://facebook.com/YOURPAGE" target="_blank">📘</a>
+<a href="https://t.me/YOURPAGE" target="_blank">✈️</a>
 </div>
-<div class="feature">
-<h3>مساعد قانوني</h3>
-<p>مدعوم بالذكاء الاصطناعي لفهم وتبسيط النصوص القانونية.</p>
-</div>
-<div class="feature">
-<h3>دليل محامين</h3>
-<p>محامين موثقين مع إمكانية التواصل المباشر.</p>
-</div>
-<div class="feature">
-<h3>واجهة احترافية</h3>
-<p>تصميم عصري سريع ومتجاوب مع جميع الأجهزة.</p>
-</div>
-</div>
-</section>
 
-<!-- SCREENSHOTS -->
-<section class="screens">
-<h2>صور من داخل التطبيق</h2>
-<div class="screen-gallery">
-<img src="screen1.jpg">
-<img src="screen2.jpg">
-<img src="screen3.jpg">
 </div>
-</section>
-
-<!-- SECURITY -->
-<section class="security">
-<h2>تحميل آمن</h2>
-<p>
-نحن نحرص على توفير نسخة آمنة ومحدثة من التطبيق.  
-قبل التثبيت تأكد من تفعيل خيار السماح بتثبيت التطبيقات من مصادر خارجية في جهازك.
-</p>
 </section>
 
 <footer>
 © 2026 الدليل القانوني - جميع الحقوق محفوظة
 </footer>
+
+<script>
+let count = 1241;
+let counter = document.getElementById("downloadCount");
+
+document.querySelector(".download-btn").addEventListener("click", function(){
+count++;
+counter.innerText = count;
+});
+</script>
 
 </body>
 </html>
